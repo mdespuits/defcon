@@ -24,8 +24,10 @@
       _results = [];
       for (_i = 0, _len = statuses.length; _i < _len; _i++) {
         build = statuses[_i];
-        if (build !== "notbuilt") {
+        if (build !== "notbuilt" && build !== "disabled") {
           _results.push(build);
+        } else {
+          _results.push(void 0);
         }
       }
       return _results;

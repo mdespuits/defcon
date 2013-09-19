@@ -10,7 +10,8 @@ $ ->
 
   _buildStatuses = (jobs) ->
     statuses = (job.color for job in jobs)
-    (build for build in statuses when build isnt "notbuilt")
+    for build in statuses
+      build if build isnt "notbuilt" and build isnt "disabled"
 
   _passingBuilds = (builds) ->
     (color for color in builds when color is "blue" or color is "yellow")
