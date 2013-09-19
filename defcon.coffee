@@ -1,5 +1,4 @@
 $ ->
-  result      = 1
   oneSecond   = 1000
   twoSeconds  = 2 * oneSecond
   fiveSeconds = 5 * oneSecond
