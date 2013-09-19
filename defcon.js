@@ -73,7 +73,6 @@
           return typeof console !== "undefined" && console !== null ? console.log("Sorry, could not fetch data") : void 0;
         },
         success: function(data) {
-          console.log(data);
           return updateDefconLevel(data);
         }
       });
@@ -95,3 +94,7 @@
   });
 
 }).call(this);
+
+/*
+//@ sourceMappingURL=defcon.map
+*/

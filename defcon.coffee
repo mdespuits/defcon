@@ -37,9 +37,7 @@ $ ->
       timeout: twoSeconds
       dataType: "jsonp"
       error:   (data) -> console?.log "Sorry, could not fetch data"
-      success: (data) ->
-        console.log data
-        updateDefconLevel(data)
+      success: (data) -> updateDefconLevel(data)
 
   updateDefconLevel = (data) ->
     currentDefconLevel = calculateDefconNumber(data)
