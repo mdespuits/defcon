@@ -35,7 +35,7 @@
       _results = [];
       for (_i = 0, _len = builds.length; _i < _len; _i++) {
         color = builds[_i];
-        if (color === "blue") {
+        if (color === "blue" || color === "yellow") {
           _results.push(color);
         }
       }

@@ -13,7 +13,7 @@ $ ->
     (build for build in statuses when build isnt "notbuilt")
 
   _passingBuilds = (builds) ->
-    (color for color in builds when color is "blue")
+    (color for color in builds when color is "blue" or color is "yellow")
 
   _buildPassingPercentage = (passing, builds) ->
     passing.length / builds.length
