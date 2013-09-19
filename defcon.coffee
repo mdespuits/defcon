@@ -6,7 +6,8 @@ $ ->
 
   defconLevels = 5
   jenkinsUri   = ->
-    "#{$(".source-value").val().trim()}/api/json?tree=jobs[name,url,color]&jsonp=?"
+    source = localStorage["defcon-jenkins-endpoint"]
+    "#{source}/api/json?tree=jobs[name,url,color]&jsonp=?"
 
   _buildStatuses = (jobs) ->
     statuses = (job.color for job in jobs)
@@ -47,3 +48,7 @@ $ ->
 
   fetchBuildData()
   setInterval (-> fetchBuildData()), twoSeconds
+
+  $( ".source-value").val(localStorage["defcon-jenkins-endpoint"]);
+  ($ ".source-value").on "keyup blur", (e) ->
+    localStorage["defcon-jenkins-endpoint"] = $(@).val();

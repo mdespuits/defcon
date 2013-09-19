@@ -8,7 +8,9 @@
     fiveSeconds = 5 * oneSecond;
     defconLevels = 5;
     jenkinsUri = function() {
-      return "" + ($(".source-value").val().trim()) + "/api/json?tree=jobs[name,url,color]&jsonp=?";
+      var source;
+      source = localStorage["defcon-jenkins-endpoint"];
+      return "" + source + "/api/json?tree=jobs[name,url,color]&jsonp=?";
     };
     _buildStatuses = function(jobs) {
       var build, job, statuses, _i, _len, _results;
@@ -83,9 +85,13 @@
       return $(".defcon-" + currentDefconLevel).addClass("active");
     };
     fetchBuildData();
-    return setInterval((function() {
+    setInterval((function() {
       return fetchBuildData();
     }), twoSeconds);
+    $(".source-value").val(localStorage["defcon-jenkins-endpoint"]);
+    return ($(".source-value")).on("keyup blur", function(e) {
+      return localStorage["defcon-jenkins-endpoint"] = $(this).val();
+    });
   });
 
 }).call(this);
