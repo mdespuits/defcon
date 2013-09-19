@@ -15,7 +15,7 @@ body {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  padding: 20% 10px 4.5%;
+  padding: 18.75% 10px 37.5%;
 }
 
 .levels {
@@ -26,13 +26,29 @@ body {
   width: 75%;
 }
 
-.defcon-1,
-.defcon-2,
-.defcon-3,
-.defcon-4,
-.defcon-5 {
+.source-value {
+  border: none;
+  padding: 3px 5px;
+  background: #222;
+  font-size: 50px;
+  color: #777;
+  display: block;
+  margin: 0 auto;
+  top: 10%;
+  left: 30%;
+  right: 30%;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.source-value:focus {
+  outline: none;
+  background: #444;
+}
+
+[class*="defcon"] {
   background: red;
-  opacity: 70;
+  opacity: 0.3;
   border-radius: 10px;
   display: block;
   float: left;
@@ -40,17 +56,22 @@ body {
   width: 19%;
   margin-bottom: 5px;
   margin-right: 7px;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
-.defcon-1 p,
-.defcon-2 p,
-.defcon-3 p,
-.defcon-4 p,
-.defcon-5 p {
+
+[class*="defcon"] p {
   font-size: 5.5em;
   font-weight: 600;
   line-height: 0.2em;
   height: 100%;
   text-align: center;
+}
+
+[class*="defcon"].active {
+  opacity: 1;
 }
 
 .defcon-1 {
