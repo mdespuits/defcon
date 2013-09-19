@@ -30,13 +30,9 @@ $ ->
     defconNumber
 
   fetchBuildData = (func) ->
-    $.ajax
-      url: jenkinsUri()
-      data: null
-      timeout: twoSeconds
-      dataType: "jsonp"
-      error:   (data) -> console?.log "Sorry, could not fetch data"
-      success: (data) -> updateDefconLevel(data)
+    $.getJSON(jenkinsUri())
+      .fail( -> console.log "Sorry, could not fetch data" )
+      .done( (data) -> updateDefconLevel(data) )
 
   updateDefconLevel = (data) ->
     currentDefconLevel = calculateDefconNumber(data)
