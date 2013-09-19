@@ -52,8 +52,8 @@ body {
   border-radius: 10px;
   display: block;
   float: left;
-  height: 215px;
-  width: 205px;
+  height: 240px;
+  width: 19%;
   margin-bottom: 5px;
   margin-right: 7px;
   -webkit-transition: opacity 1s ease-in-out;
@@ -65,7 +65,7 @@ body {
 [class*="defcon"] p {
   font-size: 10.5em;
   font-weight: 600;
-  line-height: 200px;
+  line-height: 220px;
   height: 100%;
   text-align: center;
 }
