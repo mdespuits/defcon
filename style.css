@@ -27,18 +27,18 @@ body {
 }
 
 .source-value {
-  border: none;
-  padding: 3px 5px;
-  background: #222;
-  font-size: 50px;
-  color: #777;
-  display: block;
-  margin: 0 auto;
-  top: 10%;
-  left: 30%;
-  right: 30%;
-  position: absolute;
+  background: #111;
   border-radius: 10px;
+  border: none;
+  color: #555;
+  display: block;
+  font-size: 50px;
+  left: 30%;
+  margin: 0 auto;
+  padding: 3px 5px;
+  position: absolute;
+  right: 30%;
+  top: 10%;
 }
 
 .source-value:focus {
