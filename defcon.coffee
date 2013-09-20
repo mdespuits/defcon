@@ -14,7 +14,7 @@ $ ->
       build if build isnt "notbuilt" and build isnt "disabled"
 
   _passingBuilds = (builds) ->
-    (color for color in builds when color is "blue" or color is "yellow")
+    (color for color in builds when color is "blue" or color is "blue_anime")
 
   _buildPassingPercentage = (passing, builds) ->
     passing.length / builds.length
