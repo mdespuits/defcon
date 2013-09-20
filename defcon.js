@@ -79,7 +79,7 @@
     setInterval((function() {
       return fetchBuildData();
     }), twoSeconds);
-    $(".source-value").val(localStorage["defcon-jenkins-endpoint"]);
+    ($(".source-value")).val(localStorage["defcon-jenkins-endpoint"]);
     return ($(".source-value")).on("keyup blur", function(e) {
       return localStorage["defcon-jenkins-endpoint"] = $(this).val();
     });

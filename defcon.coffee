@@ -42,6 +42,6 @@ $ ->
   fetchBuildData()
   setInterval (-> fetchBuildData()), twoSeconds
 
-  $( ".source-value").val(localStorage["defcon-jenkins-endpoint"]);
+  ($ ".source-value").val(localStorage["defcon-jenkins-endpoint"]);
   ($ ".source-value").on "keyup blur", (e) ->
     localStorage["defcon-jenkins-endpoint"] = $(@).val();
