@@ -1,0 +1,25 @@
+{
+  "name": "defcon",
+  "main": "index.ts",
+  "author": "Matthew Wells (@mdespuits)",
+  "license": "MIT",
+  "scripts": {
+    "start": "rm -rf .cache && rm -rf dist && parcel newindex.html",
+    "build": "parcel build newindex.html"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.1.2",
+    "parcel-bundler": "^1.12.4",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-modules": "^2.0.0",
+    "tailwindcss": "^1.2.0",
+    "typescript": "^3.8.3",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "assets": "^3.0.1",
+    "autoprefixer": "^9.7.6",
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.4"
+  }
+}
