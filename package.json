@@ -4,8 +4,8 @@
   "author": "Matthew Wells (@mdespuits)",
   "license": "MIT",
   "scripts": {
-    "start": "rm -rf .cache && rm -rf dist && parcel newindex.html",
-    "build": "parcel build newindex.html"
+    "start": "rm -rf .cache && rm -rf dist && parcel index.html",
+    "build": "parcel build index.html"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.1.2",

@@ -1,16 +1,24 @@
 <template>
-  <div class="wrapper">
-    <div class="source">
+  <div class="bg-gray-200 wrapper">
+    <div class="p-10">
       <input
         placeholder="Jenkins Build URL"
-        class="source-value"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         val
         type="text"
       />
     </div>
-    <div class="levels">
-      <div :key="level" v-for="level in levels" class="defcon">
-        <p>{{ level }}</p>
+
+    <div
+      class="bg-white border border-solid border-gray-300 shadow-md rounded-md m-10 mt-0"
+    >
+      <div class="bg-gray-200 p-3 border-b border-gray-400 border-solid">
+        <h3 class="text-lg">Devcon Level</h3>
+      </div>
+      <div class="levels flex flex-row justify-between p-3">
+        <div :key="level" v-for="(level, i) in levels" class="defcon rounded">
+          <p>{{ i + 1 }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -19,27 +27,27 @@
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({
-  data: () => ({
-    levels: [1, 2, 3, 4, 5],
-  }),
+interface AppData {
+  levels: number[];
+}
 
-  methods: {
-    defconClass(level: number): string {
-      return `defcon-${level}`;
-    },
+export default Vue.extend({
+  data(): AppData {
+    return {
+      levels: new Array<number>(5).fill(5),
+    };
   },
 });
 </script>
 
 <style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
-  background: #000;
-  color: #000;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  height: 100vh;
-  width: 100vw;
 }
 
 ::placeholder {
@@ -50,21 +58,13 @@ body {
 <style scoped>
 .wrapper {
   display: block;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0 auto;
 }
 
 .levels {
-  display: flex;
-  justify-content: stretch;
-  align-content: center;
-  align-items: center;
-  flex-flow: row nowrap;
-  height: 25vw;
   margin: 0 auto;
-  min-width: 300px;
-  width: 75%;
 }
 
 .source-value {
@@ -89,15 +89,18 @@ body {
 .defcon {
   background: red;
   opacity: 0.3;
-  border-radius: 10px;
-  display: block;
   flex: 1 1 auto;
-  float: left;
   height: 240px;
-  /* width: 19%; */
-  margin-bottom: 5px;
-  margin-right: 7px;
+  margin: 0 10px;
   transition: opacity 0.3s ease-in-out;
+}
+
+.defcon:first-child {
+  margin-left: 0;
+}
+
+.defcon:last-child {
+  margin-right: 0;
 }
 
 .defcon p {
